@@ -1,7 +1,7 @@
 {
   "name": "@komori/vue-query-params",
   "description": "Synchronize Vue state with URL query params (search, page, pagination).",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.1",
     "vue": "^3.5.21",
     "vue-router": "^4.5.1",
     "vue-tsc": "^3.0.6"
@@ -27,21 +26,22 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
+        "types": "./dist/es/index.d.ts",
+        "default": "./dist/es/index.js"
       },
       "require": {
-        "types": "./dist/cjs/index.d.cts",
+        "types": "./dist/cjs/index.d.ts",
         "default": "./dist/cjs/index.cjs"
       }
     },
     "./package.json": "./package.json"
   },
   "main": "dist/cjs/index.cjs",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "module": "dist/es/index.js",
+  "types": "dist/es/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "keywords": [
     "vue",
