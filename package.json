@@ -27,7 +27,8 @@
     "prepare": "husky",
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
-    "changeset:version": "changeset version && pnpm install --no-frozen-lockfile"
+    "changeset:version": "changeset version && pnpm install --no-frozen-lockfile",
+    "examples": "pnpm --filter \"examples\" dev"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
