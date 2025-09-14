@@ -1,11 +1,11 @@
 {
-  "name": "@komori/vue-query-params",
+  "name": "@komori-kit/vue-query-params",
   "description": "Synchronize Vue state with URL query params (search, page, pagination).",
   "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kenshin0011/komori.git",
+    "url": "https://github.com/Kenshin0011/komori-kit.git",
     "directory": "packages/vue-query-params"
   },
   "packageManager": "pnpm@10.15.1",

@@ -148,8 +148,8 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue"
 import { useRoute } from "vue-router"
-import { useSearch, usePagination } from "@komori/vue-query-params"
-import type { PaginatedResponse } from "@komori/vue-query-params"
+import { useSearch, usePagination } from "@komori-kit/vue-query-params"
+import type { PaginatedResponse } from "@komori-kit/vue-query-params"
 
 // ルート情報
 const route = useRoute()

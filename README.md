@@ -1,15 +1,15 @@
-# Komori
+# komori-kit
 
 A monorepo of Vue.js utilities and composables.
 
 ## Packages
 
-### [@komori/vue-query-params](./packages/vue-query-params)
+### [@komori-kit/vue-query-params](./packages/vue-query-params)
 
 Synchronize Vue state with URL query parameters for search, pagination, and more.
 
 ```bash
-npm install @komori/vue-query-params
+npm install @komori-kit/vue-query-params
 ```
 
 ## Development

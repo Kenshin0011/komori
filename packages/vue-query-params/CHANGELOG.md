@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release of `@komori/vue-query-params`
+- Initial release of `@komori-kit/vue-query-params`
 - `usePagination` composable for managing pagination state with URL synchronization
 - `useSearch` composable for managing search state with URL synchronization
 - `paginationQuerySchema` Zod schema for validating pagination query parameters

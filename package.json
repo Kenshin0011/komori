@@ -1,9 +1,9 @@
 {
-  "name": "komori",
-  "namespace": "@komori",
+  "name": "komori-kit",
+  "namespace": "@komori-kit",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kenshin0011/komori.git"
+    "url": "https://github.com/Kenshin0011/komori-kit.git"
   },
   "version": "0.0.1",
   "description": "",

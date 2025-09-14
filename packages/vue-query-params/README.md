@@ -1,11 +1,11 @@
-# @komori/vue-query-params
+# @komori-kit/vue-query-params
 
 Vue 3のComposition APIを使用してURLクエリパラメータと状態を同期するライブラリです。検索とページネーション機能を提供します。
 
 ## インストール
 
 ```bash
-pnpm add @komori/vue-query-params
+pnpm add @komori-kit/vue-query-params
 ```
 
 ## 機能
@@ -21,7 +21,7 @@ pnpm add @komori/vue-query-params
 ### useSearch
 
 ```typescript
-import { useSearch } from "@komori/vue-query-params"
+import { useSearch } from "@komori-kit/vue-query-params"
 
 // 検索パラメータの管理
 const { searchParams, search, reset, isFiltered } = useSearch(
@@ -41,7 +41,7 @@ const { searchParams, search, reset, isFiltered } = useSearch(
 ### usePagination
 
 ```typescript
-import { usePagination } from "@komori/vue-query-params"
+import { usePagination } from "@komori-kit/vue-query-params"
 
 // ページネーションの管理
 const { page, total, perPage, totalPages, goToPage, setMetaFromResponse } =

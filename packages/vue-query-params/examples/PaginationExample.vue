@@ -107,8 +107,8 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from "vue"
-import { usePagination } from "@komori/vue-query-params"
-import type { PaginatedResponse } from "@komori/vue-query-params"
+import { usePagination } from "@komori-kit/vue-query-params"
+import type { PaginatedResponse } from "@komori-kit/vue-query-params"
 
 // ページネーション管理
 const { page, total, perPage, totalPages, goToPage, setMetaFromResponse } =

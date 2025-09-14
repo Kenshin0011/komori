@@ -72,7 +72,7 @@
 </template>
 
 <script setup lang="ts">
-import { useSearch } from "@komori/vue-query-params"
+import { useSearch } from "@komori-kit/vue-query-params"
 
 // 検索パラメータの定義
 const { searchParams, search, reset, isFiltered } = useSearch(

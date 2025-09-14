@@ -1,6 +1,6 @@
 # Vue Query Params Examples
 
-このディレクトリには、`@komori/vue-query-params`パッケージの使用例が含まれています。
+このディレクトリには、`@komori-kit/vue-query-params`パッケージの使用例が含まれています。
 
 ## 例一覧
 
@@ -60,7 +60,7 @@
 1. パッケージをインストール:
 
 ```bash
-pnpm add @komori/vue-query-params
+pnpm add @komori-kit/vue-query-params
 ```
 
 2. Vue RouterとZodが必要です:
@@ -82,9 +82,9 @@ pnpm add vue-router zod
 </template>
 
 <script setup>
-import SearchExample from "@komori/vue-query-params/examples/SearchExample.vue"
-import PaginationExample from "@komori/vue-query-params/examples/PaginationExample.vue"
-import CombinedExample from "@komori/vue-query-params/examples/CombinedExample.vue"
+import SearchExample from "@komori-kit/vue-query-params/examples/SearchExample.vue"
+import PaginationExample from "@komori-kit/vue-query-params/examples/PaginationExample.vue"
+import CombinedExample from "@komori-kit/vue-query-params/examples/CombinedExample.vue"
 </script>
 ```
 
