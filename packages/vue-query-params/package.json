@@ -1,0 +1,62 @@
+{
+  "name": "@komori/vue-query-params",
+  "description": "Synchronize Vue state with URL query params (search, page, pagination).",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kenshin0011/komori.git",
+    "directory": "packages/vue-query-params"
+  },
+  "packageManager": "pnpm@10.15.1",
+  "type": "module",
+  "sideEffects": false,
+  "peerDependencies": {
+    "vue": ">=3.3.0",
+    "vue-router": ">=4.2.0"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vue": "^3.5.21",
+    "vue-router": "^4.5.1",
+    "vue-tsc": "^3.0.6"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm run clean && pnpm run build:types && pnpm run build:lib",
+    "build:lib": "vite build",
+    "build:types": "vue-tsc -p tsconfig.build.json --declaration --emitDeclarationOnly",
+    "clean": "rm -rf dist",
+    "dev": "vite build --watch",
+    "typecheck": "vue-tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  }
+}

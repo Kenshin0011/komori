@@ -1,0 +1,47 @@
+{
+  "name": "komori",
+  "namespace": "@komori",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kenshin0011/komori.git"
+  },
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [],
+  "author": "Kenshin0011",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.1",
+  "lint-staged": {
+    "*.{ts,tsx,vue}": [
+      "eslint --fix"
+    ]
+  },
+  "scripts": {
+    "build": "pnpm --filter \"./packages/**\" build",
+    "publish:all": "pnpm -r publish",
+    "lint": "pnpm --filter \"./packages/**\" lint",
+    "lint-all": "eslint . --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,vue}\"",
+    "prepare": "husky",
+    "changeset": "changeset",
+    "changeset:publish": "changeset publish",
+    "changeset:version": "changeset version && pnpm install --no-frozen-lockfile"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@types/node": "^24.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-vue": "^10.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5"
+  }
+}
