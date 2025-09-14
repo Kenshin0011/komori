@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "pnpm --filter \"./packages/**\" build",
+    "publish:all": "pnpm -r publish",
     "lint": "pnpm --filter \"./packages/**\" lint",
     "lint-all": "eslint . --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,vue}\"",
