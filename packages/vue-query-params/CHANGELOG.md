@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.0] - 2024-09-14
 
 ### Added
+
 - Initial release of `@komori/vue-query-params`
 - `usePagination` composable for managing pagination state with URL synchronization
 - `useSearch` composable for managing search state with URL synchronization
@@ -20,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Page size management with customizable options
 
 ### Features
+
 - **Pagination Management**: Handle page, pageSize, total items with URL sync
 - **Search Management**: Debounced search input with URL parameter binding
 - **Type Safety**: Full TypeScript support with Zod validation
@@ -28,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Tree Shakeable**: Modular exports for optimal bundle size
 
 ### Dependencies
+
 - Vue 3.3.0 or higher (peer dependency)
 - Vue Router 4.2.0 or higher (peer dependency)
 - Zod 3.24.1 for schema validation

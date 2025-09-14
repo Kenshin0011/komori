@@ -47,6 +47,9 @@
     "vue",
     "typescript"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "pnpm run clean && pnpm run build:types && pnpm run build:lib",
     "build:lib": "vite build",
