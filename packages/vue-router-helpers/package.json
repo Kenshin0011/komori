@@ -3,6 +3,11 @@
   "version": "0.2.0",
   "description": "Headless helpers for vue-router.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kenshin0011/komori-kit.git",
+    "directory": "packages/vue-router-helpers"
+  },
   "type": "module",
   "sideEffects": false,
   "peerDependencies": {
