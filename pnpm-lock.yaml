@@ -50,12 +50,24 @@ importers:
       vite:
         specifier: ^7.1.5
         version: 7.1.5(@types/node@24.3.3)(yaml@2.8.1)
+      vue:
+        specifier: ^3.5.21
+        version: 3.5.21(typescript@5.9.2)
+      vue-router:
+        specifier: ^4.5.1
+        version: 4.5.1(vue@3.5.21(typescript@5.9.2))
+      vue-tsc:
+        specifier: ^3
+        version: 3.0.6(typescript@5.9.2)
 
   examples:
     dependencies:
       '@komori-kit/vue-query-params':
         specifier: workspace:*
         version: link:../packages/vue-query-params
+      '@komori-kit/vue-router-helpers':
+        specifier: workspace:*
+        version: link:../packages/vue-router-helpers
       vue:
         specifier: ^3.5.21
         version: 3.5.21(typescript@5.9.2)
@@ -75,19 +87,24 @@ importers:
 
   packages/vue-query-params:
     dependencies:
+      vue:
+        specifier: '>=3.3.0'
+        version: 3.5.21(typescript@5.9.2)
+      vue-router:
+        specifier: '>=4.2.0'
+        version: 4.5.1(vue@3.5.21(typescript@5.9.2))
       zod:
         specifier: ^3.24.1
         version: 3.25.76
-    devDependencies:
+
+  packages/vue-router-helpers:
+    dependencies:
       vue:
-        specifier: ^3.5.21
+        specifier: '>=3.3.0'
         version: 3.5.21(typescript@5.9.2)
       vue-router:
-        specifier: ^4.5.1
+        specifier: '>=4.2.0'
         version: 4.5.1(vue@3.5.21(typescript@5.9.2))
-      vue-tsc:
-        specifier: ^3.0.6
-        version: 3.0.6(typescript@5.9.2)
 
 packages:
 
