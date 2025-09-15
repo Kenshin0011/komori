@@ -4,33 +4,38 @@ on:
   push:
     branches: [ main ]
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
   pull-requests: write
-  packages: write
   id-token: write
 
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node
+      - name: Setup Node (npmjs)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
+          always-auth: true
 
       - name: Configure npm auth
         run: |
-          echo "registry=https://registry.npmjs.org/" > "$NPM_CONFIG_USERCONFIG"
-          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> "$NPM_CONFIG_USERCONFIG"
+          npm config set registry "https://registry.npmjs.org/" --userconfig "$NPM_CONFIG_USERCONFIG"
+          npm config set //registry.npmjs.org/:_authToken "${NODE_AUTH_TOKEN}" --userconfig "$NPM_CONFIG_USERCONFIG"
+          npm config set provenance true --userconfig "$NPM_CONFIG_USERCONFIG"
           npm config get userconfig
           npm config get registry
         env:
@@ -46,16 +51,19 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Build
-        run: pnpm -r build
+      - name: Lint, Build, Test
+        run: pnpm run lint && pnpm build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create Release PR or Publish
+      - name: Run Changesets (version or publish)
         uses: changesets/action@v1
         with:
-          version: pnpm changeset version
-          publish: pnpm changeset publish --provenance
+          version: pnpm run changeset:version
+          publish: pnpm run changeset:publish --provenance
+          commit: "ci: Version Packages"
+          title: "ci: Version Packages"
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
