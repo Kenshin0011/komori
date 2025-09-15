@@ -1,5 +1,12 @@
 # examples
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [97e1501]
+  - @komori-kit/vue-router-helpers@0.3.0
+
 ## 0.1.1
 
 ### Patch Changes
