@@ -31,6 +31,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           always-auth: true
 
+      - name: Assert NPM token exists
+        run: |
+          if [ -z "${NPM_TOKEN}" ]; then
+            echo "::error::NPM_TOKEN is empty. Set repository secret NPM_TOKEN to an npm Automation Token."
+            exit 1
+          fi
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Configure npm auth
         run: |
           npm config set registry "https://registry.npmjs.org/" --userconfig "$NPM_CONFIG_USERCONFIG"
