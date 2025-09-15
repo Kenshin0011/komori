@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <nav class="navbar">
-      <h1>Vue Query Params Examples</h1>
+      <h1>Komori Kit Examples</h1>
       <div class="nav-links">
         <router-link to="/search" class="nav-link">Search Example</router-link>
         <router-link to="/pagination" class="nav-link"
@@ -10,6 +10,7 @@
         <router-link to="/combined" class="nav-link"
           >Combined Example</router-link
         >
+        <router-link to="/router" class="nav-link">Router Helpers</router-link>
       </div>
     </nav>
 
