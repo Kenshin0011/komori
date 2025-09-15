@@ -23,6 +23,7 @@
     "publish:all": "pnpm -r publish",
     "lint": "pnpm --filter \"./packages/**\" lint",
     "lint-all": "eslint . --fix",
+    "typecheck": "pnpm --filter \"./packages/**\" typecheck",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,vue}\"",
     "prepare": "husky",
     "changeset": "changeset",

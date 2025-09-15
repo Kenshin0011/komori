@@ -25,31 +25,23 @@ yarn add @komori-kit/vue-router-helpers
 ### Basic Usage
 
 ```vue
-<script setup>
-import { usePage } from '@komori-kit/vue-router-helpers'
+<script setup lang="ts">
+import { usePage } from "@komori-kit/vue-router-helpers"
 
 const { isActive, backTo } = usePage()
 </script>
 
 <template>
   <nav>
-    <router-link
-      to="/products"
-      :class="{ active: isActive('/products') }"
-    >
+    <router-link to="/products" :class="{ active: isActive('/products') }">
       Products
     </router-link>
-    <router-link
-      to="/about"
-      :class="{ active: isActive('/about') }"
-    >
+    <router-link to="/about" :class="{ active: isActive('/about') }">
       About
     </router-link>
   </nav>
 
-  <button @click="backTo(['/products', '/about'], '/')">
-    Go Back
-  </button>
+  <button @click="backTo(['/products', '/about'], '/')">Go Back</button>
 </template>
 ```
 
@@ -68,13 +60,13 @@ Check if the current route matches the given path(s).
 
 ```js
 // Exact match (default)
-isActive('/products') // true only if current path is exactly '/products'
+isActive("/products") // true only if current path is exactly '/products'
 
 // Prefix match
-isActive('/products', { exact: false }) // true if current path starts with '/products'
+isActive("/products", { exact: false }) // true if current path starts with '/products'
 
 // Multiple paths
-isActive(['/products', '/services']) // true if current path matches any
+isActive(["/products", "/services"]) // true if current path matches any
 
 // Regex matching
 isActive(/\/products\/\d+/) // true if current path matches the regex
@@ -94,9 +86,9 @@ Navigate back to an allowed page or fallback if not allowed.
 
 ```ts
 type BackToOptions = {
-  prefix?: boolean    // Use prefix matching for allowed URLs (default: false)
-  replace?: boolean   // Use router.replace instead of router.push (default: true)
-  source?: string     // Custom back URL source (default: history.state.back)
+  prefix?: boolean // Use prefix matching for allowed URLs (default: false)
+  replace?: boolean // Use router.replace instead of router.push (default: true)
+  source?: string // Custom back URL source (default: history.state.back)
 }
 ```
 
@@ -104,14 +96,14 @@ type BackToOptions = {
 
 ```js
 // Basic usage
-await backTo(['/products', '/about'], '/')
+await backTo(["/products", "/about"], "/")
 
 // With prefix matching
-await backTo(['/admin'], '/', { prefix: true })
+await backTo(["/admin"], "/", { prefix: true })
 // Allows '/admin', '/admin/users', '/admin/settings', etc.
 
 // With custom source
-await backTo(['/products'], '/', { source: '/custom-back-url' })
+await backTo(["/products"], "/", { source: "/custom-back-url" })
 ```
 
 ## How It Works
